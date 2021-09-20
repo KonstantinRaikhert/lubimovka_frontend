@@ -1,0 +1,60 @@
+.navigationWrapper {
+  position: relative;
+  box-sizing: border-box;
+  padding: 0 74px;
+
+  @media (max-width: $mobile-landscape) {
+    padding: 68px 0 0;
+  }
+}
+
+.slide {
+  position: relative;
+}
+
+.slide::before {
+  display: block;
+  width: 100%;
+  padding-top: calc((7 / 11) * 100%);
+  content: "";
+}
+
+.image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: auto;
+  transform: translateY(-50%) translateX(-50%);
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  cursor: pointer;
+  transform: translateY(-50%);
+
+  @media (max-width: $mobile-landscape) {
+    top: 0;
+    transform: translateY(0);
+  }
+}
+
+.arrowLeft {
+  left: 5px;
+
+  @media (max-width: $mobile-landscape) {
+    right: 124px;
+    left: auto;
+  }
+}
+
+.arrowRight {
+  right: 5px;
+  left: auto;
+
+  @media (max-width: $mobile-landscape) {
+    right: 24px;
+    left: auto;
+  }
+}
