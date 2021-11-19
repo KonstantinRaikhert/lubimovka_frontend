@@ -1,7 +1,29 @@
-.plays {
-  display: grid;
+.playsContainer {
+  box-sizing: border-box;
   padding: 134px 60px;
   background-color: var(--beige);
+
+  @media (max-width: 780px) {
+    padding: 0;
+  }
+}
+
+.playsWrapper {
+  @media (max-width: 780px) {
+    overflow-x: hidden;
+    overflow-y: auto;
+    transform: rotate(-90deg) translateY(-700px);
+    transform-origin: right top;
+
+    & > * {
+      transform: rotate(90deg);
+      transform-origin: right top;
+    }
+  }
+}
+
+.plays {
+  display: grid;
   gap: calc(var(--scale) * 30);
   grid-row: auto;
   grid-template-columns: repeat(5, 2fr);
