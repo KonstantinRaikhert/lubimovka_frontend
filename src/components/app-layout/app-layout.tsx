@@ -28,12 +28,14 @@ import { useDisableBodyScroll } from 'shared/hooks/use-disable-body-scroll';
 import * as breakpoints from 'shared/breakpoints.js';
 
 interface IAppLayoutProps {
+  expandedHeader?: boolean,
   children: ReactNode,
   hiddenPartners?: boolean,
 }
 
 export const AppLayout = (props: IAppLayoutProps): JSX.Element => {
   const {
+    expandedHeader,
     children,
     hiddenPartners,
   } = props;
@@ -54,12 +56,13 @@ export const AppLayout = (props: IAppLayoutProps): JSX.Element => {
 
   return (
     <Page>
-      <PageHeader>
+      <PageHeader expanded={expandedHeader}>
         <Navbar>
           <Navbar.Logotype>
             <Logotype
               href="/"
               title="Фестиваль Любимовка"
+              logoFull={expandedHeader}
             />
           </Navbar.Logotype>
           <Navbar.Actions>
