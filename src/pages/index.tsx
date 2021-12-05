@@ -24,7 +24,7 @@ const cx = cn.bind(styles);
 const MainPage: NextPage = () => {
   const { title, events, aside, banners, platforms, partners, archive, shortList, metaTitle } = data;
   return (
-    <AppLayout hiddenPartners>
+    <AppLayout expandedHeader hiddenPartners>
       <>
         <Head>
           <title>{metaTitle}</title>
