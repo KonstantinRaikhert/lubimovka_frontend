@@ -51,10 +51,9 @@ jobs:
         name: executing remote ssh commands to deploy
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          passphrase: ${{ secrets.PASSPHRASE }}
+          host: ${{ secrets.CI_DEPLOY_HOST }}
+          username: ${{ secrets.CI_DEPLOY_USERNAME }}
+          key: ${{ secrets.CI_DEPLOY_SSH_PRIVATE_KEY }}
           script: |
             cd ${{ env.REPOSITORY_NAME }}/infra_deploy
             
